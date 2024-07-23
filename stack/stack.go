@@ -2,11 +2,13 @@ package main
 
 import "fmt"
 
+//creating a stack structure
 type Stack struct {
 	content []int
 }
 
 func main() {
+	//creating a stack instance
 	var stack Stack
 
 	stack.Add(2)
@@ -18,14 +20,17 @@ func main() {
 	fmt.Println(stack.LastAddedItem())
 }
 
+//struct method to add item in stack
 func (stack *Stack) Add(item int) {
 	stack.content = append(stack.content, item)
 }
 
+//struct method to display items in stack
 func (stack *Stack) Display() {
 	fmt.Println(stack.content)
 }
 
+//struct method to pop last added item in the stack
 func (stack *Stack) Pop() (int, error) {
 	if len(stack.content) == 0 {
 		return 0, fmt.Errorf("No content Found")
@@ -37,6 +42,7 @@ func (stack *Stack) Pop() (int, error) {
 	return lastItem, nil
 }
 
+//struct method to check first added item
 func (stack *Stack) FirstAddedItem() (int, error) {
 	if len(stack.content) == 0 {
 		return 0, fmt.Errorf("No Content Found")
@@ -45,6 +51,7 @@ func (stack *Stack) FirstAddedItem() (int, error) {
 	return stack.content[0], nil
 }
 
+//struct method to check last added item
 func (stack *Stack) LastAddedItem() (int, error) {
 	if len(stack.content) == 0 {
 		return 0, fmt.Errorf("No Content Found")

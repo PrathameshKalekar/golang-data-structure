@@ -2,16 +2,19 @@ package main
 
 import "fmt"
 
+//To create a node for each linked list element
 type Node struct {
 	Value    int
 	NextNode *Node
 }
 
+//Circular linked list structure created having a head node
 type CircularLinkedList struct {
 	Head *Node
 }
 
 func main() {
+	//creating a instance of linked list
 	var list CircularLinkedList
 	list.Add(3)
 	list.Add(5)
@@ -20,6 +23,7 @@ func main() {
 	list.Display()
 }
 
+//struct method to add items in circular linked list
 func (list *CircularLinkedList) Add(value int) {
 	newNode := &Node{
 		Value: value,
@@ -38,6 +42,7 @@ func (list *CircularLinkedList) Add(value int) {
 	}
 }
 
+//struct method to display items in circular linked list
 func (list *CircularLinkedList) Display() {
 	current := list.Head
 	if current == nil {

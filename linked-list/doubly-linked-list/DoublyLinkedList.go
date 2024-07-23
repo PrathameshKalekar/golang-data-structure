@@ -2,18 +2,21 @@ package main
 
 import "fmt"
 
+//To create a node for each linked list element
 type Node struct {
 	Value    int
 	PrevNode *Node
 	NextNode *Node
 }
 
+//Doubly linked list structure created having a head node
 type DoublyLinkedList struct {
 	Head *Node
 	Tail *Node
 }
 
 func main() {
+	//creating a instance of linked list
 	var list DoublyLinkedList
 
 	list.Add(4)
@@ -24,6 +27,7 @@ func main() {
 	list.ReadBackward()
 }
 
+//struct method to add items in doubly linked list
 func (list *DoublyLinkedList) Add(value int) {
 	newNode := &Node{
 		Value: value,
@@ -39,6 +43,7 @@ func (list *DoublyLinkedList) Add(value int) {
 	}
 }
 
+//struct method to read element in forward form
 func (list *DoublyLinkedList) ReadForward() {
 	current := list.Head
 	fmt.Print("Reading forward : ")
@@ -48,6 +53,7 @@ func (list *DoublyLinkedList) ReadForward() {
 	}
 }
 
+//struct method to read element in backward form
 func (list *DoublyLinkedList) ReadBackward() {
 	current := list.Tail
 	fmt.Print("Reading backward : ")
