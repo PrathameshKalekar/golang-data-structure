@@ -22,7 +22,7 @@ func QuickSort(arr []int) []int {
 	pivot := rand.Int() % len(arr)
 
 	arr[pivot], arr[right] = arr[right], arr[pivot]
-	for index, _ := range arr {
+	for index := range arr {
 		if arr[index] < arr[right] {
 			arr[index], arr[left] = arr[left], arr[index]
 			left++
