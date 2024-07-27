@@ -39,18 +39,23 @@ func main() {
 }
 
 func mergeStringsAlternately(firstString, secondString string) string {
+	//for tracking each rune in the string
 	firstLen, secondLen := len(firstString), len(secondString)
 	i, j := 0, 0
 	result := ""
+	//run till all rune are added
 	for i < firstLen || j < secondLen {
+		//if first strings rune is there to add the add first strings i th run in string
 		if i < firstLen {
 			result += string(firstString[i])
 			i++
 		}
+		//if second strings rune is there to add the add second strings i th run in string
 		if j < secondLen {
 			result += string(secondString[j])
 			j++
 		}
 	}
+	//return merged result
 	return result
 }
